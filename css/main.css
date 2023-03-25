@@ -513,24 +513,75 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+.container {
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1536px;
+  }
+}
+
 .fixed {
   position: fixed;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .flex {
   display: flex;
 }
 
+.h-auto {
+  height: auto;
+}
+
+.h-full {
+  height: 100%;
+}
+
 .h-screen {
   height: 100vh;
 }
 
-.w-full {
-  width: 100%;
+.w-4\/5 {
+  width: 80%;
 }
 
-.cursor-pointer {
-  cursor: pointer;
+.w-\[40\%\] {
+  width: 40%;
+}
+
+.w-full {
+  width: 100%;
 }
 
 .items-center {
@@ -539,6 +590,10 @@ video {
 
 .justify-center {
   justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
 }
 
 .space-x-6 > :not([hidden]) ~ :not([hidden]) {
@@ -552,9 +607,9 @@ video {
   border-bottom-left-radius: 1rem;
 }
 
-.bg-amber-100 {
+.bg-orange-100 {
   --tw-bg-opacity: 1;
-  background-color: rgb(254 243 199 / var(--tw-bg-opacity));
+  background-color: rgb(255 246 204 / var(--tw-bg-opacity));
 }
 
 .bg-white {
@@ -571,19 +626,18 @@ video {
   font-family: "Baloo Tamma 2", cursive;
 }
 
-.text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
+.font-serif {
+  font-family: "Roboto Slab", serif;
+}
+
+.text-5xl {
+  font-size: 3rem;
+  line-height: 1;
 }
 
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
-}
-
-.text-2xl {
-  font-size: 1.5rem;
-  line-height: 2rem;
 }
 
 .font-bold {
@@ -601,8 +655,52 @@ video {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-h1 {
-  font-family: "Baloo Tamma 2", cursive;
+#right-wheel,
+#left-wheel {
+  animation: wheel 3.5s linear infinite;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+#man {
+  animation: bike 1s ease infinite alternate;
+  transform-origin: bottom;
+}
+
+#head {
+  animation: head 2s ease-in-out infinite alternate;
+  transform-origin: bottom right;
+  transform-box: fill-box;
+}
+
+@keyframes wheel {
+  from {
+    transform: rotateZ(360deg);
+  }
+
+  to {
+    transform: rotateZ(0deg);
+  }
+}
+
+@keyframes bike {
+  from {
+    transform: rotateX(0deg);
+  }
+
+  to {
+    transform: rotateX(10deg);
+  }
+}
+
+@keyframes head {
+  from {
+    transform: rotateZ(0deg);
+  }
+
+  to {
+    transform: rotateZ(10deg);
+  }
 }
 
 .hover\:text-violet-600:hover {

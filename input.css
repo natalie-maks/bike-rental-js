@@ -2,6 +2,46 @@
 @tailwind components;
 @tailwind utilities;
 
-h1 {
-  font-family: "Baloo Tamma 2", cursive;
+#right-wheel,
+#left-wheel {
+  animation: wheel 3.5s linear infinite;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+#man {
+  animation: bike 1s ease infinite alternate;
+  transform-origin: bottom;
+}
+
+#head {
+  animation: head 2s ease-in-out infinite alternate;
+  transform-origin: bottom right;
+  transform-box: fill-box;
+}
+
+@keyframes wheel {
+  from {
+    transform: rotateZ(360deg);
+  }
+  to {
+    transform: rotateZ(0deg);
+  }
+}
+
+@keyframes bike {
+  from {
+    transform: rotateX(0deg);
+  }
+  to {
+    transform: rotateX(10deg);
+  }
+}
+@keyframes head {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(10deg);
+  }
 }
