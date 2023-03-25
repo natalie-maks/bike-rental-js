@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  body {
+    @apply font-serif;
+  }
+}
+
 #right-wheel,
 #left-wheel {
   animation: wheel 3.5s linear infinite;

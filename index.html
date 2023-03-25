@@ -14,30 +14,44 @@
     <title>Document</title>
   </head>
   <body>
-    <nav class="fixed w-full bg-white py-4 rounded-b-2xl shadow-sm">
+    <nav class="fixed z-10 w-full bg-white py-4 rounded-b-2xl shadow-sm">
       <ul class="flex justify-center font-bold space-x-6 text-xl font-display">
-        <li class="hover:text-violet-600">
+        <li class="hover:text-violet-900">
           <a href="/index.html">Home</a>
         </li>
-        <li class="hover:text-violet-600">
+        <li class="hover:text-violet-900">
           <a href="/bikes.html">Bikes</a>
         </li>
-        <li class="hover:text-violet-600">
+        <li class="hover:text-violet-900">
           <a href="/prices.html">Prices</a>
         </li>
-        <li class="hover:text-violet-600">
+        <li class="hover:text-violet-900">
           <a href="/find-us.html">Find Us</a>
         </li>
       </ul>
     </nav>
     <main>
       <section class="h-screen bg-orange-100 rounded-b-2xl">
-        <div class="container h-full flex items-center justify-between mx-auto w-4/5">
-          <h1 class="text-purple-700 font-bold text-5xl font-display">
-            Let's ride <br />
-            Bicycle Club
-          </h1>
-          <div class="h-auto w-[40%]">
+        <div class="container h-full flex items-center justify-between mx-auto w-2/3">
+          <div>
+            <h1 class="font-bold text-5xl font-display leading-none">
+              <span
+                class="bg-violet-900 text-orange-900 block w-fit pt-4 pb-3 px-12 rotate-[-4deg] origin-bottom-left relative z-[2]"
+                >Let's ride</span
+              >
+              <span class="bg-orange-900 text-violet-700 block w-fit pt-4 pb-3 px-12 rotate-[5deg]"
+                >Bicycle Club</span
+              >
+            </h1>
+            <p class="text-xl mt-12">Hire a bike for yourself, family or group of friends!</p>
+            <a
+              class="bg-violet-900 rounded-full block w-fit mt-8 py-4 px-16 text-xl font-display text-white shadow-md border-2 border-violet-900 hover:bg-violet-700 cursor-pointer"
+            >
+              Book a bike
+            </a>
+          </div>
+
+          <div class="h-auto w-[50%]">
             <svg
               id="Layer_1"
               data-name="Layer 1"
@@ -308,8 +322,13 @@
         </div>
       </section>
       <section class="h-screen font-serif">
+        <h2>How it works</h2>
         <p>just some text to checkthe other font</p>
       </section>
+      <section><h2>What we offer</h2></section>
+      <section><h2>Our bikes</h2></section>
+      <section><h2>FAQ</h2></section>
+      <section><h2>Still have questions?</h2></section>
     </main>
     <footer></footer>
   </body>
