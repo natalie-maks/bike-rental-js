@@ -17,9 +17,9 @@ menuBtn.addEventListener("click", () => {
   }
 });
 
-const linesHeaders = document.querySelectorAll(".lines .header");
+const faqHeaders = document.querySelectorAll(".faq .header");
 
-linesHeaders.forEach((header) => {
+faqHeaders.forEach((header) => {
   header.addEventListener("click", (e) => {
     e.target.parentElement.classList.toggle("active");
   });

@@ -97,28 +97,25 @@ nav ul.open {
   transform: scaleY(1);
 }
 
-.lines {
+.faq {
   @apply lg:w-4/5 mx-auto mt-2 border-b-2 border-violet-900;
 }
 
-.lines .option {
+.faq .option {
   max-height: 0;
   overflow: hidden;
   transition: max-height 1s ease-in-out;
 }
 
-.lines.active .option {
-  max-height: 600px;
-}
-.lines.faq.active .option {
-  max-height: 160px;
+.faq.active .option {
+  max-height: 260px;
 }
 
-.lines button {
+.faq button {
   @apply pointer-events-none flex justify-center items-center;
   transition: transform 1s ease-in-out;
 }
 
-.lines.active button {
+.faq.active button {
   transform: rotate(180deg);
 }
