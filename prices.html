@@ -14,8 +14,18 @@
     <title>Document</title>
   </head>
   <body>
-    <nav class="fixed z-10 w-full bg-white py-4 rounded-b-2xl shadow-sm">
-      <ul class="flex justify-center font-bold space-x-6 text-xl font-display">
+    <nav
+      class="fixed z-10 w-full min-h-[60px] bg-white py-4 rounded-b-2xl shadow-sm font-bold font-display"
+    >
+      <button class="hamburger absolute right-3 sm:hidden z-10" id="menu-btn">
+        <span class="hamburger-top"></span>
+        <span class="hamburger-middle"></span>
+        <span class="hamburger-bottom"></span>
+      </button>
+      <ul
+        class="hidden h-screen sm:h-fit sm:opacity-100 sm:scale-y-100 sm:flex flex-col sm:flex-row items-center justify-center text-3xl sm:text-xl space-y-6 sm:space-y-0 sm:space-x-6"
+        id="menu-list"
+      >
         <li class="hover:text-violet-900">
           <a href="/index.html">Home</a>
         </li>
@@ -375,5 +385,6 @@
         </table>
       </section>
     </main>
+    <script src="index.js"></script>
   </body>
 </html>
