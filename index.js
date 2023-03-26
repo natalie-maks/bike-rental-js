@@ -16,3 +16,11 @@ menuBtn.addEventListener("click", () => {
     }, 250);
   }
 });
+
+const linesHeaders = document.querySelectorAll(".lines .header");
+
+linesHeaders.forEach((header) => {
+  header.addEventListener("click", (e) => {
+    e.target.parentElement.classList.toggle("active");
+  });
+});
