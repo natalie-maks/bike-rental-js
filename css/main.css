@@ -669,6 +669,10 @@ body {
   margin-bottom: 5rem;
 }
 
+.mt-20 {
+  margin-top: 5rem;
+}
+
 .block {
   display: block;
 }
@@ -1080,6 +1084,10 @@ body {
 
 .pt-40 {
   padding-top: 10rem;
+}
+
+.pt-20 {
+  padding-top: 5rem;
 }
 
 .text-center {
