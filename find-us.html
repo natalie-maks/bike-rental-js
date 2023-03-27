@@ -11,11 +11,21 @@
       href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@600;700&family=Roboto+Slab:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-    <title>Document</title>
+    <title>Let's Ride Bicycle Club - Contact</title>
   </head>
   <body>
-    <nav class="fixed z-10 w-full bg-white py-4 rounded-b-2xl shadow-sm">
-      <ul class="flex justify-center font-bold space-x-6 text-xl font-display">
+    <nav
+      class="fixed z-10 w-full min-h-[60px] bg-white py-4 rounded-b-2xl shadow-sm font-bold font-display"
+    >
+      <button class="hamburger absolute right-3 sm:hidden z-10" id="menu-btn">
+        <span class="hamburger-top"></span>
+        <span class="hamburger-middle"></span>
+        <span class="hamburger-bottom"></span>
+      </button>
+      <ul
+        class="hidden h-screen sm:h-fit sm:opacity-100 sm:scale-y-100 sm:flex flex-col sm:flex-row items-center justify-center text-3xl sm:text-xl space-y-6 sm:space-y-0 sm:space-x-6"
+        id="menu-list"
+      >
         <li class="hover:text-violet-900">
           <a href="/index.html">Home</a>
         </li>
@@ -31,7 +41,217 @@
       </ul>
     </nav>
     <main>
-      <section><h1>Our Bikes</h1></section>
+      <div class="bg-orange-100 h-72 flex items-center justify-center pt-14">
+        <h1
+          class="text-violet-900 bg-orange-700 block w-fit pt-4 pb-3 px-8 sm:px-12 rotate-[-4deg] font-bold text-5xl font-display"
+        >
+          Find Us
+        </h1>
+      </div>
+
+      <p class="text-center text-lg lg:w-2/3 mx-auto my-20 px-4 md:px-12">
+        We are very easy to find. We include an interactive Google map, where you can get directions
+        from your own location. We've also included our exact GPS coordinates, if you just want to
+        pop us into your SatNav!
+      </p>
+      <div class="px-4">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d71585.38295352984!2d-4.307468199489067!3d50.9977443113705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x486c146ad74edac7%3A0xb5ef901c8b991d6b!2sPeppercombe%20Beach!5e0!3m2!1sen!2suk!4v1679436913775!5m2!1sen!2suk"
+          width="600"
+          height="450"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Map"
+          class="h-72 mx-auto w-full md:w-2/3 rounded-md md:rounded-2xl"
+        ></iframe>
+      </div>
+
+      <p class="text-center text-lg lg:w-2/3 mx-auto mt-12 font-display px-4 md:px-12">
+        GPS: LAT 50.9885 / 50°59'18"N | LON -4.3194 / 4°19'9"W
+      </p>
+
+      <section class="my-40 px-4 md:px-12">
+        <h2
+          class="block w-fit mx-auto mb-20 pt-4 pb-3 px-8 lg:px-12 rotate-[5deg] origin-bottom-left text-3xl text-center font-display text-violet-900 bg-orange-700"
+        >
+          Contact us
+        </h2>
+        <p class="text-center text-lg lg:w-2/3 mx-auto">
+          We are always happy to answer any of your questions about our services. Just give us a
+          call or send us a message below to start your adventure now.
+        </p>
+        <div
+          class="flex flex-col md:flex-row lg:space-x-8 space-y-8 md:space-y-0 justify-between mt-12 lg:w-4/5 mx-auto"
+        >
+          <div class="text-center lg:w-1/3">
+            <h3 class="font-display text-2xl text-violet-900 mb-2">Phone</h3>
+            <p>+44 7788 346456</p>
+          </div>
+          <div class="text-center lg:w-1/3">
+            <h3 class="font-display text-2xl text-violet-900 mb-2">Email</h3>
+            <p>lets-ride@bicycleclub.com</p>
+          </div>
+          <div class="text-center lg:w-1/3">
+            <h3 class="font-display text-2xl text-violet-900 mb-2">Social Medias</h3>
+            <ul class="flex justify-center space-x-4">
+              <li class="p-2 rounded-full border-[2px] border-orange-700">
+                <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook"
+                  ><img class="object-cover h-8 w-8 invert" src="/img/facebook-icon.png" alt=""
+                /></a>
+              </li>
+              <li class="p-2 rounded-full border-[2px] border-orange-700">
+                <a href="https://twitter.com/?lang=en" target="_blank" aria-label="Twitter"
+                  ><img class="object-cover h-8 w-8 invert" src="/img/twitter-icon.png" alt=""
+                /></a>
+              </li>
+              <li class="p-2 rounded-full border-[2px] border-orange-700">
+                <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram"
+                  ><img class="object-cover h-8 w-8 invert" src="/img/instagram-icon.png" alt=""
+                /></a>
+              </li>
+              <li class="p-2 rounded-full border-[2px] border-orange-700">
+                <a href="https://www.linkedin.com/" target="_blank" aria-label="LinkedIn"
+                  ><img class="object-cover h-8 w-8 invert" src="/img/linkedin-icon.png" alt=""
+                /></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <form
+          class="my-40 w-full md:w-4/5 xl:w-3/5 mx-auto p-4 md:p-8 border-[3px] border-orange-700 rounded-2xl"
+        >
+          <div class="w-full flex flex-col lg:flex-row">
+            <div class="w-full lg:w-1/2 flex flex-col">
+              <label for="name" class="mt-4 mb-1 text-xl font-display font-bold text-violet-900"
+                >Name</label
+              >
+              <input
+                id="first-name"
+                type="text"
+                class="p-4 py-2 text-lg border-orange-700 border-2 focus:outline-none rounded-full"
+                placeholder="Jane Doe"
+                autocomplete="off"
+                required
+              />
+            </div>
+            <div class="w-full lg:w-1/2 flex flex-col lg:pl-4">
+              <label for="phone" class="mt-4 mb-1 text-xl font-display font-bold text-violet-900"
+                >Phone</label
+              >
+              <input
+                id="phone"
+                type="tel"
+                class="p-4 py-2 text-lg border-orange-700 border-2 focus:outline-none rounded-full"
+                placeholder="+44 0000 000000"
+                autocomplete="off"
+                required
+              />
+            </div>
+          </div>
+          <div class="w-full flex flex-col">
+            <label for="email" class="mt-4 mb-1 text-xl font-display font-bold text-violet-900"
+              >Email</label
+            >
+            <input
+              id="email"
+              type="email"
+              class="p-4 py-2 text-lg border-orange-700 border-2 focus:outline-none rounded-full"
+              placeholder="example@gmail.com"
+              autocomplete="off"
+              required
+            />
+          </div>
+          <div class="w-full flex flex-col">
+            <label for="message" class="mt-4 mb-1 text-xl font-display font-bold text-violet-900"
+              >Message</label
+            >
+            <textarea
+              name="message"
+              id="message"
+              rows="7"
+              autocomplete="off"
+              class="p-4 py-2 text-lg border-orange-700 border-2 focus:outline-none rounded-2xl resize-none"
+              required
+            ></textarea>
+          </div>
+
+          <button
+            class="bg-violet-900 rounded-full block mx-auto mt-6 w-fit min-w-[250px] py-3 px-16 text-xl font-display text-white shadow-md border-2 border-violet-900 hover:bg-violet-700 cursor-pointer"
+          >
+            Send
+          </button>
+        </form>
+      </section>
     </main>
+    <footer class="pt-10 pb-8 bg-violet-700 px-4 md:px-12">
+      <div
+        class="flex flex-col-reverse md:flex-row justify-between space-y-8 md:space-y-0 lg:w-4/5 mx-auto pb-6 border-b-4 border-orange-700"
+      >
+        <p class="font-bold text-2xl font-display leading-none hidden lg:block">
+          <span
+            class="bg-orange-700 text-violet-700 block w-fit pt-4 pb-3 px-12 rotate-[-4deg] origin-bottom-left relative z-[2]"
+            >Let's ride</span
+          >
+          <span class="bg-white text-orange-900 block w-fit pt-4 pb-3 px-12 rotate-[5deg]"
+            >Bicycle Club</span
+          >
+        </p>
+        <div
+          class="flex flex-col sm:flex-row justify-center lg:space-x-16 font-display text-2xl lg:text-base text-white pb-8 lg:pb-0"
+        >
+          <ul class="sm:w-1/2">
+            <li class="mb-2 lg:mb-0"><a href="/index.html">HOME</a></li>
+            <li class="mb-2 lg:mb-0"><a href="/bikes.html">OUR BIKES</a></li>
+            <li class="mb-2 lg:mb-0"><a href="/prices.html">PRICES</a></li>
+            <li class="mb-2 lg:mb-0"><a href="/find-us.html">FIND US</a></li>
+          </ul>
+          <ul class="sm:w-1/2">
+            <li class="mb-2 lg:mb-0"><a href="/booking.html">BOOK A RIDE</a></li>
+            <li class="mb-2 lg:mb-0"><a href="/privacy.html">PRIVACY POLICY</a></li>
+            <li class="mb-2 lg:mb-0"><a href="/terms.html">TERMS & CONDITIONS</a></li>
+          </ul>
+        </div>
+        <form class="flex flex-col space-y-4 lg:space-y-2 md:w-2/5 lg:w-fit">
+          <span class="font-display text-3xl lg:text-xl text-white">NEWSLETTER</span>
+          <input
+            class="border-2 border-orange-700 rounded-full py-2 lg:py-1 px-4"
+            type="email"
+            placeholder="example@gmail.com"
+          />
+          <button
+            class="bg-orange-700 rounded-full block w-full py-2 lg:py-1 px-16 text-xl lg:text-lg font-display text-white shadow-md border-2 border-orange-900 hover:bg-orange-500 cursor-pointer"
+          >
+            Subscribe
+          </button>
+        </form>
+      </div>
+      <ul class="flex justify-center space-x-4 my-8">
+        <li class="p-2 rounded-full border-[2px] border-white">
+          <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook"
+            ><img class="object-cover h-8 w-8" src="/img/facebook-icon.png" alt=""
+          /></a>
+        </li>
+        <li class="p-2 rounded-full border-[2px] border-white">
+          <a href="https://twitter.com/?lang=en" target="_blank" aria-label="Twitter"
+            ><img class="object-cover h-8 w-8" src="/img/twitter-icon.png" alt=""
+          /></a>
+        </li>
+        <li class="p-2 rounded-full border-[2px] border-white">
+          <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram"
+            ><img class="object-cover h-8 w-8" src="/img/instagram-icon.png" alt=""
+          /></a>
+        </li>
+        <li class="p-2 rounded-full border-[2px] border-white">
+          <a href="https://www.linkedin.com/" target="_blank" aria-label="LinkedIn"
+            ><img class="object-cover h-8 w-8" src="/img/linkedin-icon.png" alt=""
+          /></a>
+        </li>
+      </ul>
+      <p class="text-center text-sm text-white">Copyright &copy; 2023, All Rights Reserved</p>
+    </footer>
+    <script src="index.js"></script>
   </body>
 </html>

@@ -7,6 +7,32 @@
     <title>Document</title>
   </head>
   <body>
+    <nav
+      class="fixed z-10 w-full min-h-[60px] bg-white py-4 rounded-b-2xl shadow-sm font-bold font-display"
+    >
+      <button class="hamburger absolute right-3 sm:hidden z-10" id="menu-btn">
+        <span class="hamburger-top"></span>
+        <span class="hamburger-middle"></span>
+        <span class="hamburger-bottom"></span>
+      </button>
+      <ul
+        class="hidden h-screen sm:h-fit sm:opacity-100 sm:scale-y-100 sm:flex flex-col sm:flex-row items-center justify-center text-3xl sm:text-xl space-y-6 sm:space-y-0 sm:space-x-6"
+        id="menu-list"
+      >
+        <li class="hover:text-violet-900">
+          <a href="/index.html">Home</a>
+        </li>
+        <li class="hover:text-violet-900">
+          <a href="/bikes.html">Bikes</a>
+        </li>
+        <li class="hover:text-violet-900">
+          <a href="/prices.html">Prices</a>
+        </li>
+        <li class="hover:text-violet-900">
+          <a href="/find-us.html">Find Us</a>
+        </li>
+      </ul>
+    </nav>
     <div class="container padding-bottom-2x mb-2 mt-5 padding-2x pagecontent">
       <p>
         For the purposes of this privacy notice, The Bike Shed (also referred to as ‘we’, ‘our’ and
@@ -168,5 +194,72 @@
         EX17 3AW.
       </p>
     </div>
+    <footer class="pt-10 pb-8 bg-violet-700 px-4 md:px-12">
+      <div
+        class="flex flex-col-reverse md:flex-row justify-between space-y-8 md:space-y-0 lg:w-4/5 mx-auto pb-6 border-b-4 border-orange-700"
+      >
+        <p class="font-bold text-2xl font-display leading-none hidden lg:block">
+          <span
+            class="bg-orange-700 text-violet-700 block w-fit pt-4 pb-3 px-12 rotate-[-4deg] origin-bottom-left relative z-[2]"
+            >Let's ride</span
+          >
+          <span class="bg-white text-orange-900 block w-fit pt-4 pb-3 px-12 rotate-[5deg]"
+            >Bicycle Club</span
+          >
+        </p>
+        <div
+          class="flex flex-col sm:flex-row justify-center lg:space-x-16 font-display text-2xl lg:text-base text-white pb-8 lg:pb-0"
+        >
+          <ul class="sm:w-1/2">
+            <li class="mb-2 lg:mb-0"><a href="/index.html">HOME</a></li>
+            <li class="mb-2 lg:mb-0"><a href="/bikes.html">OUR BIKES</a></li>
+            <li class="mb-2 lg:mb-0"><a href="/prices.html">PRICES</a></li>
+            <li class="mb-2 lg:mb-0"><a href="/find-us.html">FIND US</a></li>
+          </ul>
+          <ul class="sm:w-1/2">
+            <li class="mb-2 lg:mb-0"><a href="/booking.html">BOOK A RIDE</a></li>
+            <li class="mb-2 lg:mb-0"><a href="/privacy.html">PRIVACY POLICY</a></li>
+            <li class="mb-2 lg:mb-0"><a href="/terms.html">TERMS & CONDITIONS</a></li>
+          </ul>
+        </div>
+        <form class="flex flex-col space-y-4 lg:space-y-2 md:w-2/5 lg:w-fit">
+          <span class="font-display text-3xl lg:text-xl text-white">NEWSLETTER</span>
+          <input
+            class="border-2 border-orange-700 rounded-full py-2 lg:py-1 px-4"
+            type="email"
+            placeholder="example@gmail.com"
+          />
+          <button
+            class="bg-orange-700 rounded-full block w-full py-2 lg:py-1 px-16 text-xl lg:text-lg font-display text-white shadow-md border-2 border-orange-900 hover:bg-orange-500 cursor-pointer"
+          >
+            Subscribe
+          </button>
+        </form>
+      </div>
+      <ul class="flex justify-center space-x-4 my-8">
+        <li class="p-2 rounded-full border-[2px] border-white">
+          <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook"
+            ><img class="object-cover h-8 w-8" src="/img/facebook-icon.png" alt=""
+          /></a>
+        </li>
+        <li class="p-2 rounded-full border-[2px] border-white">
+          <a href="https://twitter.com/?lang=en" target="_blank" aria-label="Twitter"
+            ><img class="object-cover h-8 w-8" src="/img/twitter-icon.png" alt=""
+          /></a>
+        </li>
+        <li class="p-2 rounded-full border-[2px] border-white">
+          <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram"
+            ><img class="object-cover h-8 w-8" src="/img/instagram-icon.png" alt=""
+          /></a>
+        </li>
+        <li class="p-2 rounded-full border-[2px] border-white">
+          <a href="https://www.linkedin.com/" target="_blank" aria-label="LinkedIn"
+            ><img class="object-cover h-8 w-8" src="/img/linkedin-icon.png" alt=""
+          /></a>
+        </li>
+      </ul>
+      <p class="text-center text-sm text-white">Copyright &copy; 2023, All Rights Reserved</p>
+    </footer>
+    <script src="index.js"></script>
   </body>
 </html>
