@@ -9,19 +9,31 @@ selectElements.forEach((selectElement) => {
 const rentDuration = document.getElementById("rent-duration");
 const numOfRiders = document.getElementById("num-of-riders");
 const typeOfBike = document.getElementById("type-of-bike");
-const extras = document.querySelectorAll(".extra");
+const disabled = document.querySelectorAll(`[data-disabled]`);
+const extras = document.querySelectorAll("div.extra");
+const total = document.getElementById("total");
 
+let rentDurationValue = rentDuration.dataset.value;
 let riders = 0;
 let personBike;
 
 numOfRiders.addEventListener("click", () => {
-  console.log(`helli`);
-  riders = numOfRiders.dataset.value;
-  createTypeOfBikeSection();
+  if (Number(numOfRiders.dataset.value) !== riders) {
+    riders = Number(numOfRiders.dataset.value);
+    createTypeOfBikeSection();
+    disabled.forEach((disabled) => {
+      disabled.classList.remove("disabled");
+    });
+
+    calcPrice();
+  }
 });
 
-rentDuration.addEventListener("change", () => {
-  createTypeOfBikeSection();
+rentDuration.addEventListener("click", () => {
+  if (rentDuration.dataset.value !== rentDurationValue) {
+    rentDurationValue = rentDuration.dataset.value;
+    calcPrice();
+  }
 });
 
 function createTypeOfBikeSection() {
@@ -75,22 +87,39 @@ function createTypeOfBikeSection() {
   typeOfBike.querySelectorAll("select").forEach((select) => {
     new Select(select);
   });
-  personBike = document.querySelectorAll(".bike-type");
+  personBike = document.querySelectorAll("div.bike-type");
+  personBike.forEach((person) => {
+    let bikeTypeValue = "hybrid";
+    person.addEventListener("click", () => {
+      if (bikeTypeValue !== person.dataset.value) {
+        bikeTypeValue = person.dataset.value;
+        calcPrice();
+      }
+    });
+  });
 }
+
+extras.forEach((extra) => {
+  let extraValue = 0;
+  extra.addEventListener("click", () => {
+    if (extraValue !== Number(extra.dataset.value)) {
+      extraValue = Number(extra.dataset.value);
+      calcPrice();
+    }
+  });
+});
 
 function calcPrice() {
   let totalPrice = 0;
   personBike.forEach((person) => {
-    console.log(prices[person.value][rentDuration.value]);
-    totalPrice += prices[person.value][rentDuration.value];
+    totalPrice += prices[person.dataset.value][rentDuration.dataset.value];
   });
 
   extras.forEach((extra) => {
-    console.log(extra.value * prices[extra.id][rentDuration.value]);
-    totalPrice += extra.value * prices[extra.id][rentDuration.value];
+    totalPrice += extra.dataset.value * prices[extra.id][rentDuration.dataset.value];
   });
 
-  console.log(totalPrice);
+  total.innerText = totalPrice;
 }
 
 const prices = {
@@ -99,9 +128,11 @@ const prices = {
     full: 15,
   },
   mtb: {
+    half: 19,
     full: 25,
   },
   gravel: {
+    half: 19,
     full: 26,
   },
   "road-bike": {
@@ -149,3 +180,53 @@ const prices = {
     full: 5,
   },
 };
+
+const cardNumber = document.getElementById("card-number");
+const expirationDate = document.getElementById("expire-date");
+const cvv = document.getElementById("cvv");
+const phone = document.getElementById("phone");
+
+var cardnumber_mask = new IMask(cardNumber, {
+  mask: "0000{ }0000{ }0000{ }0000",
+});
+
+var phone_mask = new IMask(phone, {
+  mask: "{+}Number",
+  blocks: {
+    Number: {
+      mask: Number,
+    },
+  },
+});
+
+var securitycode_mask = new IMask(cvv, {
+  mask: "000",
+});
+
+var expirationdate_mask = new IMask(expirationDate, {
+  mask: "MM{ / }YY",
+  blocks: {
+    YY: {
+      mask: "00",
+    },
+
+    MM: {
+      mask: IMask.MaskedRange,
+      from: 1,
+      to: 12,
+    },
+  },
+});
+
+const form = document.querySelector("form");
+const successWindow = document.getElementById("success-window");
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  successWindow.classList.remove("hidden");
+  window.addEventListener("click", () => {
+    successWindow.classList.add("hidden");
+  });
+  form.reset();
+});

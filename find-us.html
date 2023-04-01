@@ -4,13 +4,16 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/main.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@600;700&family=Roboto+Slab:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="/css/main.css" />
+
+    <script src="https://unpkg.com/imask"></script>
+
     <title>Let's Ride Bicycle Club - Contact</title>
   </head>
   <body>
@@ -186,6 +189,14 @@
         </form>
       </section>
     </main>
+    <div class="hidden fixed inset-0 bg-gray-300/50" id="success-window">
+      <p
+        class="absolute top-1/2 left-1/2 translate-y-[-50%] translate-x-[-50%] bg-violet-700 rounded-3xl py-12 px-16 font-display text-center text-3xl text-white"
+      >
+        Your message <br />
+        has been sent!
+      </p>
+    </div>
     <footer class="pt-10 pb-8 bg-violet-700 px-4 md:px-12">
       <div
         class="flex flex-col-reverse md:flex-row justify-between space-y-8 md:space-y-0 lg:w-4/5 mx-auto pb-6 border-b-4 border-orange-700"
@@ -253,5 +264,6 @@
       <p class="text-center text-sm text-white">Copyright &copy; 2023, All Rights Reserved</p>
     </footer>
     <script src="index.js"></script>
+    <script src="message.js"></script>
   </body>
 </html>

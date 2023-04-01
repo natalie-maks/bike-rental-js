@@ -2,6 +2,7 @@ const daysTag = document.querySelector(".days");
 const currentDate = document.getElementById("current-date");
 const prevNextIcon = document.querySelectorAll("#calendar header span");
 const calendar = document.getElementById("calendar");
+const calendarHeader = document.querySelector(".calendar-wrapper header");
 
 let date = new Date();
 let currYear = date.getFullYear();
@@ -11,18 +12,22 @@ let activeDay = date;
 
 const calendarOutput = document.getElementById("calendar-output");
 calendarOutput.tabIndex = 0;
+calendar.tabIndex = 0;
 
 calendarOutput.addEventListener("click", () => {
   if (calendar.classList.contains("hidden")) {
     calendar.classList.remove("hidden");
+    calendarHeader.style.zIndex = `1`;
   } else {
     calendar.classList.add("hidden");
+    calendarHeader.removeAttribute("style");
   }
 });
 
 window.addEventListener("click", (e) => {
   if (!checkPath(e.composedPath())) {
     calendar.classList.add("hidden");
+    calendarHeader.removeAttribute("style");
   }
 });
 

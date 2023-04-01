@@ -159,3 +159,7 @@ nav ul.open {
 .selected {
   @apply bg-orange-300;
 }
+
+.disabled {
+  @apply text-gray-600 pointer-events-none opacity-60;
+}

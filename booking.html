@@ -15,6 +15,7 @@
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
     />
     <link rel="stylesheet" href="/css/main.css" />
+    <script src="https://unpkg.com/imask"></script>
     <title>Let's Ride Bicycle Club - Booking</title>
   </head>
   <body>
@@ -55,7 +56,7 @@
       <form class="container lg:w-4/5 xl:w-2/3 mx-auto my-40">
         <fieldset class="mb-8 px-4 md:px-8 pt-6 pb-4 border-t-4 border-orange-500 bg-orange-50">
           <legend
-            class="lg:ml-4 border-2 border-orange-500 bg-white rounded-full pt-2 pb-1 px-8 font-display font-medium text-lg"
+            class="lg:ml-4 mx-auto border-2 border-orange-500 bg-white rounded-full pt-2 pb-1 px-8 font-display font-medium text-lg"
           >
             Step 1 - Choose Date & Number of riders
           </legend>
@@ -84,14 +85,16 @@
           </div>
           <div class="flex flex-col md:flex-row md:space-x-10">
             <div
-              class="calendar-wrapper md:w-1/2 flex flex-col md:flex-row justify-between md:items-center mb-4"
+              class="calendar-wrapper md:w-1/2 flex flex-col md:flex-row justify-between md:items-center mb-4 group"
             >
               <label for="name" class="font-display text-xl mb-2 md:mb-0 mr-8">Date</label>
               <div class="relative w-full focus-within:z-[1]">
                 <header
-                  class="relative border-orange-700 border-2 rounded-3xl bg-white cursor-pointer overflow-hidden"
+                  class="relative border-orange-700 border-2 group-focus-within:border-[3px] rounded-3xl bg-white cursor-pointer overflow-hidden"
                 >
-                  <p id="calendar-output" class="py-2 pl-6 select-none">12 March 2023</p>
+                  <p id="calendar-output" class="py-2 pl-6 select-none focus:outline-none">
+                    12 March 2023
+                  </p>
                   <div
                     class="absolute top-0 right-0 h-10 w-10 bg-orange-300 border-orange-700 border-l-2 pointer-events-none flex justify-center items-center"
                   >
@@ -100,7 +103,7 @@
                 </header>
                 <div
                   id="calendar"
-                  class="absolute z-[-1] top-0 hidden w-full bg-white py-2 border-orange-700 border-2 rounded-3xl pt-11"
+                  class="absolute top-0 hidden w-full bg-white py-2 border-orange-700 border-[3px] rounded-3xl pt-11"
                 >
                   <div class="max-w-[350px] mx-auto select-none">
                     <header class="flex justify-between font-display text-lg">
@@ -150,7 +153,7 @@
             Step 2 - Type of Bike
           </legend>
           <div id="type-of-bike">
-            <div class="person mb-4">
+            <div class="person disabled mb-4">
               <p class="font-display text-2xl mb-2">Person 1</p>
               <div
                 class="flex flex-col md:flex-row space-y-2 md:space-y-0 lg:flex-row justify-between"
@@ -159,8 +162,8 @@
                   <label for="bike-type-pers1" class="font-display text-xl mr-8">Type</label>
                   <select data-id="bike-type-pers1" class="bike-type w-[290px]">
                     <option value="hybrid">Hybrid</option>
-                    <option value="mtb" ${disabled}>MTB</option>
-                    <option value="gravel" ${disabled}>Gravel</option>
+                    <option value="mtb">MTB</option>
+                    <option value="gravel">Gravel</option>
                     <option value="road-bike">Road bike</option>
                     <option value="child-bike">Child bike</option>
                     <option value="ebike">eBike</option>
@@ -184,8 +187,8 @@
                 <div
                   class="flex md:flex-col xl:flex-row justify-between w- md:w-fit items-center md:items-start xl:items-center"
                 >
-                  <label for="gender-pers${i + 1}" class="font-display text-xl mr-8">Gender</label>
-                  <select data-id="gender-pers${i + 1}">
+                  <label for="gender-pers1" class="font-display text-xl mr-8">Gender</label>
+                  <select data-id="gender-pers1">
                     <option value="m">M</option>
                     <option value="f">F</option>
                   </select>
@@ -200,50 +203,50 @@
           >
             Step 3 - Extra
           </legend>
-          <div class="flex justify-between items-center mb-4">
+          <div class="flex justify-between items-center mb-4 disabled" data-disabled>
             <label class="font-display text-xl" for="tag-a-long">Tag-a-long </label>
-            <select class="extra tag" data-id="tag-a-long">
-              <option value="0" selected disabled hidden>0</option>
+            <select class="extra" data-id="tag-a-long">
+              <option value="0" selected>0</option>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
               <option value="4">4</option>
             </select>
           </div>
-          <div class="flex justify-between items-center mb-4">
+          <div class="flex justify-between items-center mb-4 disabled" data-disabled>
             <label class="font-display text-xl" for="weehoo-single">Weehoo Single</label>
             <select data-id="weehoo-single" class="extra">
-              <option value="0" selected disabled hidden>0</option>
+              <option value="0" selected>0</option>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
               <option value="4">4</option>
             </select>
           </div>
-          <div class="flex justify-between items-center mb-4">
+          <div class="flex justify-between items-center mb-4 disabled" data-disabled>
             <label class="font-display text-xl" for="weehoo-double">Weehoo Double</label>
             <select data-id="weehoo-double" class="extra">
-              <option value="0" selected disabled hidden>0</option>
+              <option value="0" selected>0</option>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
               <option value="4">4</option>
             </select>
           </div>
-          <div class="flex justify-between items-center mb-4">
+          <div class="flex justify-between items-center mb-4 disabled" data-disabled>
             <label class="font-display text-xl" for="child-trailer">Child Trailer</label>
             <select data-id="child-trailer" class="extra">
-              <option value="0" selected disabled hidden>0</option>
+              <option value="0" selected>0</option>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
               <option value="4">4</option>
             </select>
           </div>
-          <div class="flex justify-between items-center mb-4">
+          <div class="flex justify-between items-center mb-4 disabled" data-disabled>
             <label class="font-display text-xl" for="child-seat">Child Seat</label>
             <select data-id="child-seat" class="extra">
-              <option value="0" selected disabled hidden>0</option>
+              <option value="0" selected>0</option>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -251,52 +254,49 @@
             </select>
           </div>
         </fieldset>
-        <button
-          class="bg-violet-900 rounded-full mx-auto mb-8 block py-3 px-12 text-xl text-center font-display text-white shadow-md border-2 border-violet-900 hover:bg-violet-700"
-        >
-          Book selected
-        </button>
         <fieldset class="mb-8 px-4 md:px-8 pt-6 pb-4 border-t-4 border-orange-500 bg-orange-50">
           <legend
             class="lg:ml-4 mx-auto border-2 border-orange-500 bg-white rounded-full pt-2 pb-1 px-8 font-display font-medium text-lg"
           >
             Step 4 - Personal information
           </legend>
-          <div class="w-full flex flex-col lg:flex-row">
-            <div class="w-full lg:w-2/3 flex flex-col mr-4 mb-4">
-              <label for="name" class="font-display text-xl">Name</label>
-              <input
-                id="name"
-                type="text"
-                class="px-6 py-2 h-[46px] border-orange-700 border-2 rounded-3xl focus:outline-none focus:border-[3px]"
-                placeholder="Jane Doe"
-                autocomplete="off"
-                required
-              />
+          <div class="disabled" data-disabled>
+            <div class="w-full flex flex-col lg:flex-row">
+              <div class="w-full lg:w-2/3 flex flex-col mr-4 mb-4">
+                <label for="name" class="font-display text-xl">Name</label>
+                <input
+                  id="name"
+                  type="text"
+                  class="px-6 py-2 h-[46px] border-orange-700 border-2 rounded-3xl focus:outline-none focus:border-[3px]"
+                  placeholder="Jane Doe"
+                  autocomplete="off"
+                  required
+                />
+              </div>
+              <div class="w-full lg:w-1/3 flex flex-col mb-4">
+                <label for="phone" class="font-display text-xl">Phone</label>
+                <input
+                  id="phone"
+                  type="tel"
+                  class="px-6 py-2 h-[46px] border-orange-700 border-2 rounded-3xl focus:outline-none focus:border-[3px]"
+                  placeholder="+44 0000 000000"
+                  autocomplete="off"
+                  required
+                />
+              </div>
             </div>
-            <div class="w-full lg:w-1/3 flex flex-col mb-4">
-              <label for="phone" class="font-display text-xl">Phone</label>
-              <input
-                id="phone"
-                type="tel"
-                class="px-6 py-2 h-[46px] border-orange-700 border-2 rounded-3xl focus:outline-none focus:border-[3px]"
-                placeholder="+44 0000 000000"
-                autocomplete="off"
-                required
-              />
-            </div>
-          </div>
 
-          <div class="w-full flex flex-col mb-4">
-            <label for="email" class="font-display text-xl">Email</label>
-            <input
-              id="email"
-              type="email"
-              class="px-6 py-2 h-[46px] border-orange-700 border-2 rounded-3xl focus:outline-none focus:border-[3px]"
-              placeholder="example@gmail.com"
-              autocomplete="off"
-              required
-            />
+            <div class="w-full flex flex-col mb-4">
+              <label for="email" class="font-display text-xl">Email</label>
+              <input
+                id="email"
+                type="email"
+                class="px-6 py-2 h-[46px] border-orange-700 border-2 rounded-3xl focus:outline-none focus:border-[3px]"
+                placeholder="example@gmail.com"
+                autocomplete="off"
+                required
+              />
+            </div>
           </div>
         </fieldset>
         <fieldset class="mb-8 px-4 md:px-8 pt-6 pb-4 border-t-4 border-orange-500 bg-orange-50">
@@ -305,40 +305,44 @@
           >
             Step 5 - Payment Details
           </legend>
-          <p class="text-3xl font-display mb-8">Total:</p>
-          <div class="w-full flex flex-col mb-4">
-            <label for="card-number" class="font-display text-xl">Card number</label>
-            <input
-              id="card-number"
-              type="text"
-              class="px-6 py-2 h-[46px] border-orange-700 border-2 rounded-3xl focus:outline-none focus:border-[3px]"
-              placeholder="0000 0000 0000 0000"
-              autocomplete="off"
-              required
-            />
-          </div>
-          <div class="w-full flex flex-col md:flex-row">
-            <div class="w-full md:w-2/3 flex flex-col mr-4 mb-4">
-              <label for="expire-date" class="font-display text-xl">Expire date</label>
+          <div class="disabled" data-disabled>
+            <p class="text-3xl font-display mb-8">
+              <span class="mr-8">Total:</span>£<span id="total">00</span>.00
+            </p>
+            <div class="w-full flex flex-col mb-4">
+              <label for="card-number" class="font-display text-xl">Card number</label>
               <input
-                id="expire-date"
+                id="card-number"
                 type="text"
                 class="px-6 py-2 h-[46px] border-orange-700 border-2 rounded-3xl focus:outline-none focus:border-[3px]"
-                placeholder="00 / 00"
+                placeholder="0000 0000 0000 0000"
                 autocomplete="off"
                 required
               />
             </div>
-            <div class="w-full md:w-1/3 flex flex-col mb-4">
-              <label for="cvv" class="font-display text-xl">CVV</label>
-              <input
-                id="cvv"
-                type="text"
-                class="px-6 py-2 h-[46px] border-orange-700 border-2 rounded-3xl focus:outline-none focus:border-[3px]"
-                placeholder="000"
-                autocomplete="off"
-                required
-              />
+            <div class="w-full flex flex-col md:flex-row">
+              <div class="w-full md:w-2/3 flex flex-col mr-4 mb-4">
+                <label for="expire-date" class="font-display text-xl">Expire date</label>
+                <input
+                  id="expire-date"
+                  type="text"
+                  class="px-6 py-2 h-[46px] border-orange-700 border-2 rounded-3xl focus:outline-none focus:border-[3px]"
+                  placeholder="00 / 00"
+                  autocomplete="off"
+                  required
+                />
+              </div>
+              <div class="w-full md:w-1/3 flex flex-col mb-4">
+                <label for="cvv" class="font-display text-xl">CVV</label>
+                <input
+                  id="cvv"
+                  type="text"
+                  class="px-6 py-2 h-[46px] border-orange-700 border-2 rounded-3xl focus:outline-none focus:border-[3px]"
+                  placeholder="000"
+                  autocomplete="off"
+                  required
+                />
+              </div>
             </div>
           </div>
         </fieldset>
@@ -349,6 +353,13 @@
         </button>
       </form>
     </main>
+    <div class="hidden fixed inset-0 bg-gray-300/50" id="success-window">
+      <p
+        class="absolute top-1/2 left-1/2 translate-y-[-50%] translate-x-[-50%] bg-violet-700 rounded-3xl py-12 px-16 font-display text-3xl text-white"
+      >
+        Success!
+      </p>
+    </div>
     <footer class="pt-10 pb-8 bg-violet-700 px-4 md:px-12">
       <div
         class="flex flex-col-reverse md:flex-row justify-between space-y-8 md:space-y-0 lg:w-4/5 mx-auto pb-6 border-b-4 border-orange-700"

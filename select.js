@@ -118,6 +118,7 @@ function setupCustomElement(select) {
     const optionElement = document.createElement("li");
     optionElement.classList.add("py-2", "pl-4", "cursor-pointer", "hover:bg-orange-100");
     optionElement.classList.toggle("selected", option.selected);
+    optionElement.classList.toggle("hidden", option.hidden);
     optionElement.innerText = option.label;
     optionElement.dataset.value = option.value;
     optionElement.addEventListener("click", () => {
@@ -181,6 +182,7 @@ function formatOriginalOptions(optionElements) {
       value: optionElement.value,
       label: optionElement.label,
       selected: optionElement.selected,
+      hidden: optionElement.hidden,
       element: optionElement,
     };
   });
