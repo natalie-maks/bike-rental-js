@@ -11,14 +11,12 @@ const numOfRiders = document.getElementById("num-of-riders");
 const typeOfBike = document.getElementById("type-of-bike");
 const extras = document.querySelectorAll(".extra");
 
-console.log(numOfRiders.value);
-
 let riders = 0;
 let personBike;
 
-numOfRiders.addEventListener("change", () => {
+numOfRiders.addEventListener("click", () => {
   console.log(`helli`);
-  riders = numOfRiders.value;
+  riders = numOfRiders.dataset.value;
   createTypeOfBikeSection();
 });
 
@@ -29,40 +27,54 @@ rentDuration.addEventListener("change", () => {
 function createTypeOfBikeSection() {
   typeOfBike.innerHTML = ``;
 
-  const disabled = rentDuration.value === "half" ? "disabled" : "";
-
   for (let i = 0; i < riders; i++) {
-    let personBike = `<div class="person">
-            <p>Person ${i + 1}</p>
-            <label for="bike-type-pers${i + 1}">Type</label>
-            <select name="bike-type-pers${i + 1}" id="bike-type-pers${i + 1}" class="bike-type">
-              <option value="hybrid">Hybrid</option>
-              <option value="mtb" ${disabled}>MTB</option>
-              <option value="gravel" ${disabled}>Gravel</option>
-              <option value="road-bike">Road bike</option>
-              <option value="child-bike">Child bike</option>
-              <option value="ebike">eBike</option>
-              <option value="velocity-tandem">Ridgeback Velocity Tandem</option>
-              <option value="tandem-hybrid">Viking Tandem Hybrid</option>
-              <option value="trike">Trike</option>
-            </select>
-            <label for="bike-size-pers${i + 1}">Size</label>
-            <select name="bike-size-pers${i + 1}" id="bike-size-pers${i + 1}">
-              <option value="xs">xs</option>
-              <option value="sm">sm</option>
-              <option value="m">m</option>
-              <option value="l">l</option>
-              <option value="xl">xl</option>
-            </select>
-            <label for="gender-pers${i + 1}">Gender</label>
-            <select name="gender-pers${i + 1}" id="gender-pers${i + 1}">
-              <option value="m">M</option>
-              <option value="f">F</option>
-            </select>
-          </div>`;
+    let personBike = `<div class="person mb-4">
+              <p class="font-display text-2xl mb-2">Person ${i + 1}</p>
+              <div
+                class="flex flex-col md:flex-row space-y-2 md:space-y-0 lg:flex-row justify-between"
+              >
+                <div class="flex flex-col xl:flex-row xl:items-center w-full md:w-fit">
+                  <label for="bike-type-pers${i + 1}" class="font-display text-xl mr-8">Type</label>
+                  <select data-id="bike-type-pers${i + 1}" class="bike-type w-full md:w-[290px]">
+                    <option value="hybrid">Hybrid</option>
+                    <option value="mtb" >MTB</option>
+                    <option value="gravel">Gravel</option>
+                    <option value="road-bike">Road bike</option>
+                    <option value="child-bike">Child bike</option>
+                    <option value="ebike">eBike</option>
+                    <option value="velocity-tandem">Velocity Tandem</option>
+                    <option value="tandem-hybrid">Tandem Hybrid</option>
+                    <option value="trike">Trike</option>
+                  </select>
+                </div>
+                <div
+                  class="flex md:flex-col xl:flex-row justify-between w-full md:w-fit items-center md:items-start xl:items-center"
+                >
+                  <label for="bike-size-pers${i + 1}" class="font-display text-xl mr-8">Size</label>
+                  <select data-id="bike-size-pers${i + 1}">
+                    <option value="xs">xs</option>
+                    <option value="sm">sm</option>
+                    <option value="m">m</option>
+                    <option value="l">l</option>
+                    <option value="xl">xl</option>
+                  </select>
+                </div>
+                <div
+                  class="flex md:flex-col xl:flex-row justify-between w- md:w-fit items-center md:items-start xl:items-center"
+                >
+                  <label for="gender-pers${i + 1}" class="font-display text-xl mr-8">Gender</label>
+                  <select data-id="gender-pers${i + 1}">
+                    <option value="m">M</option>
+                    <option value="f">F</option>
+                  </select>
+                </div>
+              </div>
+            </div>`;
     typeOfBike.innerHTML += personBike;
   }
-
+  typeOfBike.querySelectorAll("select").forEach((select) => {
+    new Select(select);
+  });
   personBike = document.querySelectorAll(".bike-type");
 }
 

@@ -52,142 +52,157 @@
           Book a Bike
         </h1>
       </div>
-      <form class="w-2/3 mx-auto my-40">
-        <fieldset class="mb-8 p-4 border-t-4 border-orange-500 bg-orange-100">
+      <form class="container lg:w-4/5 xl:w-2/3 mx-auto my-40">
+        <fieldset class="mb-8 px-4 md:px-8 pt-6 pb-4 border-t-4 border-orange-500 bg-orange-50">
           <legend
-            class="ml-4 border-2 border-orange-500 bg-white rounded-full pt-2 pb-1 px-8 font-display font-medium text-lg"
+            class="lg:ml-4 border-2 border-orange-500 bg-white rounded-full pt-2 pb-1 px-8 font-display font-medium text-lg"
           >
             Step 1 - Choose Date & Number of riders
           </legend>
-          <div class="calendar-wrapper">
-            <label for="name" class="font-sans font-bold text-violet-800">Date</label>
-            <div class="relative">
-              <header class="relative">
-                <p id="calendar-output" class="p-4 py-2 text-lg border-yellow-800 border-2">
-                  12 March 2023
-                </p>
-                <div
-                  class="absolute top-0 right-0 h-full w-12 bg-yellow-200 border-yellow-800 border-2 pointer-events-none flex justify-center items-center"
+          <div class="flex flex-col md:flex-row md:space-x-10">
+            <div class="md:w-1/2 flex justify-between items-center mb-4">
+              <label class="font-display text-xl" for="num-of-riders">Number of riders</label>
+              <select data-id="num-of-riders">
+                <option value="0" selected disabled hidden>0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+              </select>
+            </div>
+            <div class="md:w-1/2 flex justify-between items-center mb-4">
+              <label class="font-display text-xl" for="rent-duration">Duration</label>
+              <select data-id="rent-duration">
+                <option value="full">Full day</option>
+                <option value="half">Half day</option>
+              </select>
+            </div>
+          </div>
+          <div class="flex flex-col md:flex-row md:space-x-10">
+            <div
+              class="calendar-wrapper md:w-1/2 flex flex-col md:flex-row justify-between md:items-center mb-4"
+            >
+              <label for="name" class="font-display text-xl mb-2 md:mb-0 mr-8">Date</label>
+              <div class="relative w-full focus-within:z-[1]">
+                <header
+                  class="relative border-orange-700 border-2 rounded-3xl bg-white cursor-pointer overflow-hidden"
                 >
-                  <span class="material-symbols-rounded text-4xl text-yellow-800">
-                    expand_more
-                  </span>
-                </div>
-              </header>
-              <div
-                id="calendar"
-                class="absolute hidden w-full bg-yellow-200 z-10 py-2 border-yellow-800 border-2 border-t-0"
-              >
-                <div class="max-w-[350px] mx-auto">
-                  <header class="flex justify-between text-yellow-900 font-sans font-bold text-lg">
-                    <span
-                      id="prev"
-                      class="material-symbols-rounded cursor-pointer px-2 py-2 hover:bg-yellow-50"
-                      >chevron_left</span
-                    >
-                    <p class="py-2" id="current-date"></p>
-                    <span
-                      id="next"
-                      class="material-symbols-rounded cursor-pointer px-2 py-2 hover:bg-yellow-50"
-                      >chevron_right</span
-                    >
-                  </header>
-                  <ul
-                    class="grid grid-cols-7 justify-items-center font-display font-bold text-yellow-900 my-2"
+                  <p id="calendar-output" class="py-2 pl-6 select-none">12 March 2023</p>
+                  <div
+                    class="absolute top-0 right-0 h-10 w-10 bg-orange-300 border-orange-700 border-l-2 pointer-events-none flex justify-center items-center"
                   >
-                    <li>Sun</li>
-                    <li>Mon</li>
-                    <li>Tue</li>
-                    <li>Wed</li>
-                    <li>Thu</li>
-                    <li>Fri</li>
-                    <li>Sat</li>
-                  </ul>
-                  <ul class="days grid grid-cols-7 justify-items-center font-display"></ul>
+                    <span class="material-symbols-rounded text-3xl"> expand_more </span>
+                  </div>
+                </header>
+                <div
+                  id="calendar"
+                  class="absolute z-[-1] top-0 hidden w-full bg-white py-2 border-orange-700 border-2 rounded-3xl pt-11"
+                >
+                  <div class="max-w-[350px] mx-auto select-none">
+                    <header class="flex justify-between font-display text-lg">
+                      <span
+                        id="prev"
+                        class="material-symbols-rounded cursor-pointer px-2 py-2 hover:bg-orange-100 hover:rounded-l-full"
+                        >chevron_left</span
+                      >
+                      <p class="py-2" id="current-date"></p>
+                      <span
+                        id="next"
+                        class="material-symbols-rounded cursor-pointer px-2 py-2 hover:bg-orange-100 hover:rounded-r-full"
+                        >chevron_right</span
+                      >
+                    </header>
+                    <ul class="grid grid-cols-7 justify-items-center font-display font-bold my-2">
+                      <li>Sun</li>
+                      <li>Mon</li>
+                      <li>Tue</li>
+                      <li>Wed</li>
+                      <li>Thu</li>
+                      <li>Fri</li>
+                      <li>Sat</li>
+                    </ul>
+                    <ul class="days grid grid-cols-7 justify-items-center font-display"></ul>
+                  </div>
                 </div>
               </div>
             </div>
+            <div class="md:w-1/2 flex justify-between items-center mb-4">
+              <label for="time" class="font-display text-xl">Pickup Time</label>
+              <select data-id="time">
+                <option value="">9AM</option>
+                <option value="">9:30AM</option>
+                <option value="">10AM</option>
+                <option value="">10:30AM</option>
+                <option value="">11AM</option>
+                <option value="">11:30AM</option>
+              </select>
+            </div>
           </div>
-
-          <label for="rent-duration">Duration</label>
-          <select name="rent-duration" id="rent-duration">
-            <option value="full">Full day</option>
-            <option value="half">Half day</option>
-          </select>
-
-          <label for="time">Pickup Time</label>
-          <select name="time" id="time">
-            <option value="">9AM</option>
-            <option value="">9:30AM</option>
-            <option value="">10AM</option>
-            <option value="">10:30AM</option>
-            <option value="">11AM</option>
-            <option value="">11:30AM</option>
-          </select>
-
-          <label for="num-of-riders">Number of riders</label>
-          <select name="num-of-riders" id="num-of-riders">
-            <option value="0" selected disabled hidden>0</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-          </select>
         </fieldset>
-        <fieldset class="mb-8 p-4 border-t-4 border-orange-500 bg-orange-100">
+        <fieldset class="mb-8 px-4 md:px-8 pt-6 pb-4 border-t-4 border-orange-500 bg-orange-50">
           <legend
-            class="ml-4 border-2 border-orange-500 bg-white rounded-full pt-2 pb-1 px-8 font-display font-medium text-lg"
+            class="lg:ml-4 mx-auto border-2 border-orange-500 bg-white rounded-full pt-2 pb-1 px-8 font-display font-medium text-lg"
           >
             Step 2 - Type of Bike
           </legend>
           <div id="type-of-bike">
-            <div class="person">
-              <p>Person 1</p>
-              <label for="bike-type-pers${i + 1}">Type</label>
-              <select name="bike-type-pers${i + 1}" id="bike-type-pers${i + 1}" class="bike-type">
-                <option value="hybrid">Hybrid</option>
-                <option value="mtb" ${disabled}>MTB</option>
-                <option value="gravel" ${disabled}>Gravel</option>
-                <option value="road-bike">Road bike</option>
-                <option value="child-bike">Child bike</option>
-                <option value="ebike">eBike</option>
-                <option value="velocity-tandem">Ridgeback Velocity Tandem</option>
-                <option value="tandem-hybrid">Viking Tandem Hybrid</option>
-                <option value="trike">Trike</option>
-              </select>
-              <label for="bike-size-pers${i + 1}">Size</label>
-              <select name="bike-size-pers${i + 1}" id="bike-size-pers${i + 1}">
-                <option value="xs">xs</option>
-                <option value="sm">sm</option>
-                <option value="m">m</option>
-                <option value="l">l</option>
-                <option value="xl">xl</option>
-              </select>
-              <label for="gender-pers${i + 1}">Gender</label>
-              <select name="gender-pers${i + 1}" id="gender-pers${i + 1}">
-                <option value="m">M</option>
-                <option value="f">F</option>
-              </select>
+            <div class="person mb-4">
+              <p class="font-display text-2xl mb-2">Person 1</p>
+              <div
+                class="flex flex-col md:flex-row space-y-2 md:space-y-0 lg:flex-row justify-between"
+              >
+                <div class="flex flex-col xl:flex-row xl:items-center w-full md:w-fit">
+                  <label for="bike-type-pers1" class="font-display text-xl mr-8">Type</label>
+                  <select data-id="bike-type-pers1" class="bike-type w-[290px]">
+                    <option value="hybrid">Hybrid</option>
+                    <option value="mtb" ${disabled}>MTB</option>
+                    <option value="gravel" ${disabled}>Gravel</option>
+                    <option value="road-bike">Road bike</option>
+                    <option value="child-bike">Child bike</option>
+                    <option value="ebike">eBike</option>
+                    <option value="velocity-tandem">Velocity Tandem</option>
+                    <option value="tandem-hybrid">Tandem Hybrid</option>
+                    <option value="trike">Trike</option>
+                  </select>
+                </div>
+                <div
+                  class="flex md:flex-col xl:flex-row justify-between w-full md:w-fit items-center md:items-start xl:items-center"
+                >
+                  <label for="bike-size-pers1" class="font-display text-xl mr-8">Size</label>
+                  <select data-id="bike-size-pers1">
+                    <option value="xs">xs</option>
+                    <option value="sm">sm</option>
+                    <option value="m">m</option>
+                    <option value="l">l</option>
+                    <option value="xl">xl</option>
+                  </select>
+                </div>
+                <div
+                  class="flex md:flex-col xl:flex-row justify-between w- md:w-fit items-center md:items-start xl:items-center"
+                >
+                  <label for="gender-pers${i + 1}" class="font-display text-xl mr-8">Gender</label>
+                  <select data-id="gender-pers${i + 1}">
+                    <option value="m">M</option>
+                    <option value="f">F</option>
+                  </select>
+                </div>
+              </div>
             </div>
           </div>
         </fieldset>
-        <fieldset class="mb-8 p-4 border-t-4 border-orange-500 bg-orange-100">
+        <fieldset class="mb-8 px-4 md:px-8 pt-6 pb-4 border-t-4 border-orange-500 bg-orange-50">
           <legend
-            class="ml-4 border-2 border-orange-500 bg-white rounded-full pt-2 pb-1 px-8 font-display font-medium text-lg"
+            class="lg:ml-4 mx-auto border-2 border-orange-500 bg-white rounded-full pt-2 pb-1 px-8 font-display font-medium text-lg"
           >
             Step 3 - Extra
           </legend>
-          <div class="flex justify-between py-1">
+          <div class="flex justify-between items-center mb-4">
             <label class="font-display text-xl" for="tag-a-long">Tag-a-long </label>
-            <select
-              name="tag-a-long"
-              id="tag-a-long"
-              class="extra border-2 border-orange-700 rounded-full py-2 px-4"
-            >
+            <select class="extra tag" data-id="tag-a-long">
               <option value="0" selected disabled hidden>0</option>
               <option value="1">1</option>
               <option value="2">2</option>
@@ -195,9 +210,9 @@
               <option value="4">4</option>
             </select>
           </div>
-          <div class="flex justify-between py-1">
-            <label class="font-display text-xl" for="weehoo-single">Weehoo Single </label>
-            <select name="weehoo-single" id="weehoo-single" class="extra">
+          <div class="flex justify-between items-center mb-4">
+            <label class="font-display text-xl" for="weehoo-single">Weehoo Single</label>
+            <select data-id="weehoo-single" class="extra">
               <option value="0" selected disabled hidden>0</option>
               <option value="1">1</option>
               <option value="2">2</option>
@@ -205,9 +220,9 @@
               <option value="4">4</option>
             </select>
           </div>
-          <div>
-            <label for="weehoo-double">Weehoo Double </label>
-            <select name="weehoo-double" id="weehoo-double" class="extra">
+          <div class="flex justify-between items-center mb-4">
+            <label class="font-display text-xl" for="weehoo-double">Weehoo Double</label>
+            <select data-id="weehoo-double" class="extra">
               <option value="0" selected disabled hidden>0</option>
               <option value="1">1</option>
               <option value="2">2</option>
@@ -215,9 +230,9 @@
               <option value="4">4</option>
             </select>
           </div>
-          <div>
-            <label for="child-trailer">Child Trailer </label>
-            <select name="child-trailer" id="child-trailer" class="extra">
+          <div class="flex justify-between items-center mb-4">
+            <label class="font-display text-xl" for="child-trailer">Child Trailer</label>
+            <select data-id="child-trailer" class="extra">
               <option value="0" selected disabled hidden>0</option>
               <option value="1">1</option>
               <option value="2">2</option>
@@ -225,9 +240,9 @@
               <option value="4">4</option>
             </select>
           </div>
-          <div>
-            <label for="child-seat">Child Seat </label>
-            <select name="child-seat" id="child-seat" class="extra">
+          <div class="flex justify-between items-center mb-4">
+            <label class="font-display text-xl" for="child-seat">Child Seat</label>
+            <select data-id="child-seat" class="extra">
               <option value="0" selected disabled hidden>0</option>
               <option value="1">1</option>
               <option value="2">2</option>
@@ -236,30 +251,35 @@
             </select>
           </div>
         </fieldset>
-        <fieldset class="mb-8 p-4 border-t-4 border-orange-500 bg-orange-100">
+        <button
+          class="bg-violet-900 rounded-full mx-auto mb-8 block py-3 px-12 text-xl text-center font-display text-white shadow-md border-2 border-violet-900 hover:bg-violet-700"
+        >
+          Book selected
+        </button>
+        <fieldset class="mb-8 px-4 md:px-8 pt-6 pb-4 border-t-4 border-orange-500 bg-orange-50">
           <legend
-            class="ml-4 border-2 border-orange-500 bg-white rounded-full pt-2 pb-1 px-8 font-display font-medium text-lg"
+            class="lg:ml-4 mx-auto border-2 border-orange-500 bg-white rounded-full pt-2 pb-1 px-8 font-display font-medium text-lg"
           >
             Step 4 - Personal information
           </legend>
-          <div class="w-full flex flex-col lg:flex-row space-y-2 lg:space-y-0">
-            <div class="w-full lg:w-2/3 flex flex-col mr-4">
-              <label for="name" class="font-sans font-bold text-brown-800">Name</label>
+          <div class="w-full flex flex-col lg:flex-row">
+            <div class="w-full lg:w-2/3 flex flex-col mr-4 mb-4">
+              <label for="name" class="font-display text-xl">Name</label>
               <input
                 id="name"
                 type="text"
-                class="p-4 py-2 text-lg border-brown-800 border-2 focus:outline-none"
+                class="px-6 py-2 h-[46px] border-orange-700 border-2 rounded-3xl focus:outline-none focus:border-[3px]"
                 placeholder="Jane Doe"
                 autocomplete="off"
                 required
               />
             </div>
-            <div class="w-full lg:w-1/3 flex flex-col">
-              <label for="phone" class="font-sans font-bold text-brown-800">Phone</label>
+            <div class="w-full lg:w-1/3 flex flex-col mb-4">
+              <label for="phone" class="font-display text-xl">Phone</label>
               <input
                 id="phone"
                 type="tel"
-                class="p-4 py-2 text-lg border-brown-800 border-2 focus:outline-none"
+                class="px-6 py-2 h-[46px] border-orange-700 border-2 rounded-3xl focus:outline-none focus:border-[3px]"
                 placeholder="+44 0000 000000"
                 autocomplete="off"
                 required
@@ -267,56 +287,54 @@
             </div>
           </div>
 
-          <div class="w-full flex flex-col">
-            <label for="email" class="font-sans font-bold text-brown-800">Email</label>
+          <div class="w-full flex flex-col mb-4">
+            <label for="email" class="font-display text-xl">Email</label>
             <input
               id="email"
               type="email"
-              class="p-4 py-2 text-lg border-brown-800 border-2 focus:outline-none"
+              class="px-6 py-2 h-[46px] border-orange-700 border-2 rounded-3xl focus:outline-none focus:border-[3px]"
               placeholder="example@gmail.com"
               autocomplete="off"
               required
             />
           </div>
         </fieldset>
-        <fieldset class="mb-8 p-4 border-t-4 border-orange-500 bg-orange-100">
+        <fieldset class="mb-8 px-4 md:px-8 pt-6 pb-4 border-t-4 border-orange-500 bg-orange-50">
           <legend
-            class="ml-4 border-2 border-orange-500 bg-white rounded-full pt-2 pb-1 px-8 font-display font-medium text-lg"
+            class="lg:ml-4 mx-auto border-2 border-orange-500 bg-white rounded-full pt-2 pb-1 px-8 font-display font-medium text-lg"
           >
             Step 5 - Payment Details
           </legend>
-          <p>Total:</p>
-          <div class="w-full flex flex-col">
-            <label for="card-number" class="font-sans font-bold text-brown-800">Card number</label>
+          <p class="text-3xl font-display mb-8">Total:</p>
+          <div class="w-full flex flex-col mb-4">
+            <label for="card-number" class="font-display text-xl">Card number</label>
             <input
               id="card-number"
               type="text"
-              class="p-4 py-2 text-lg border-brown-800 border-2 focus:outline-none"
+              class="px-6 py-2 h-[46px] border-orange-700 border-2 rounded-3xl focus:outline-none focus:border-[3px]"
               placeholder="0000 0000 0000 0000"
               autocomplete="off"
               required
             />
           </div>
-          <div class="w-full flex flex-col md:flex-row space-y-2 md:space-y-0">
-            <div class="w-full md:w-2/3 flex flex-col mr-4">
-              <label for="expire-date" class="font-sans font-bold text-brown-800"
-                >Expire date</label
-              >
+          <div class="w-full flex flex-col md:flex-row">
+            <div class="w-full md:w-2/3 flex flex-col mr-4 mb-4">
+              <label for="expire-date" class="font-display text-xl">Expire date</label>
               <input
                 id="expire-date"
                 type="text"
-                class="p-4 py-2 text-lg border-brown-800 border-2 focus:outline-none"
+                class="px-6 py-2 h-[46px] border-orange-700 border-2 rounded-3xl focus:outline-none focus:border-[3px]"
                 placeholder="00 / 00"
                 autocomplete="off"
                 required
               />
             </div>
-            <div class="w-full md:w-1/3 flex flex-col">
-              <label for="cvv" class="font-sans font-bold text-brown-800">CVV</label>
+            <div class="w-full md:w-1/3 flex flex-col mb-4">
+              <label for="cvv" class="font-display text-xl">CVV</label>
               <input
                 id="cvv"
                 type="text"
-                class="p-4 py-2 text-lg border-brown-800 border-2 focus:outline-none"
+                class="px-6 py-2 h-[46px] border-orange-700 border-2 rounded-3xl focus:outline-none focus:border-[3px]"
                 placeholder="000"
                 autocomplete="off"
                 required
@@ -324,6 +342,11 @@
             </div>
           </div>
         </fieldset>
+        <button
+          class="bg-violet-900 rounded-full mx-auto block py-3 px-12 text-xl text-center font-display text-white shadow-md border-2 border-violet-900 hover:bg-violet-700 cursor-pointer"
+        >
+          Finish Booking
+        </button>
       </form>
     </main>
     <footer class="pt-10 pb-8 bg-violet-700 px-4 md:px-12">

@@ -124,10 +124,6 @@ nav ul.open {
   margin-bottom: 1rem;
 }
 
-.days .inactive {
-  color: grey;
-}
-
 .days li {
   z-index: 1;
   cursor: pointer;
@@ -138,9 +134,6 @@ nav ul.open {
   pointer-events: none;
 }
 
-.days li.active {
-  color: white;
-}
 .days li::before {
   position: absolute;
   content: "";
@@ -148,14 +141,15 @@ nav ul.open {
   top: 50%;
   height: 40px;
   width: 40px;
+  border-radius: 50%;
   z-index: -1;
   transform: translate(-50%, -50%);
 }
 .days li.active::before {
-  @apply bg-yellow-900;
+  @apply bg-orange-700;
 }
 .days li:not(.active):hover::before {
-  @apply bg-yellow-50;
+  @apply bg-orange-300;
 }
 
 .select-open {

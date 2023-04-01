@@ -31,6 +31,7 @@ export default class Select {
     newSelectedOption.selected = true;
     newSelectedOption.element.selected = true;
 
+    this.customElement.dataset.value = newSelectedOption.value;
     this.labelElementName.innerText = newSelectedOption.label;
 
     this.optionsCustomElement
@@ -52,9 +53,15 @@ function setupCustomElement(select) {
     "outline-none",
     "group",
     "focus:z-[1]",
-    "min-w-fit"
+    "h-[46px]"
   );
+  select.element.classList.forEach((i) => {
+    select.customElement.classList.add(i);
+  });
   select.customElement.tabIndex = 0;
+  select.customElement.id = select.element.dataset.id;
+
+  select.customElement.dataset.value = select.selectedOption.value;
 
   select.labelElement.classList.add(
     "border-2",
@@ -67,7 +74,6 @@ function setupCustomElement(select) {
     "justify-between",
     "cursor-pointer",
     "select-none",
-    "group-focus:bg-orange-100",
     "group-focus:border-[3px]",
     "overflow-hidden"
   );
@@ -77,8 +83,7 @@ function setupCustomElement(select) {
   select.labelElementArrow.classList.add(
     "material-symbols-rounded",
     "text-3xl",
-    "text-orange-900",
-    "bg-orange-100",
+    "bg-orange-300",
     "border-l-2",
     "border-l-orange-700",
     "w-10",

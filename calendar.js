@@ -10,6 +10,7 @@ let currMonth = date.getMonth();
 let activeDay = date;
 
 const calendarOutput = document.getElementById("calendar-output");
+calendarOutput.tabIndex = 0;
 
 calendarOutput.addEventListener("click", () => {
   if (calendar.classList.contains("hidden")) {
