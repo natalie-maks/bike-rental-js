@@ -22,7 +22,6 @@ calendarOutput.addEventListener("click", () => {
 window.addEventListener("click", (e) => {
   if (!checkPath(e.composedPath())) {
     calendar.classList.add("hidden");
-    console.log(`log`);
   }
 });
 

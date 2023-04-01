@@ -109,14 +109,14 @@
             </div>
           </div>
 
-          <label for="">Duration</label>
-          <select name="" id="">
-            <option value="">Full day</option>
-            <option value="">Half day</option>
+          <label for="rent-duration">Duration</label>
+          <select name="rent-duration" id="rent-duration">
+            <option value="full">Full day</option>
+            <option value="half">Half day</option>
           </select>
 
           <label for="time">Pickup Time</label>
-          <select name="" id="">
+          <select name="time" id="time">
             <option value="">9AM</option>
             <option value="">9:30AM</option>
             <option value="">10AM</option>
@@ -125,16 +125,17 @@
             <option value="">11:30AM</option>
           </select>
 
-          <label for="">Number of riders</label>
-          <select name="" id="">
-            <option value="">1</option>
-            <option value="">2</option>
-            <option value="">3</option>
-            <option value="">4</option>
-            <option value="">5</option>
-            <option value="">6</option>
-            <option value="">7</option>
-            <option value="">8</option>
+          <label for="num-of-riders">Number of riders</label>
+          <select name="num-of-riders" id="num-of-riders">
+            <option value="0" selected disabled hidden>0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
           </select>
         </fieldset>
         <fieldset class="mb-8 p-4 border-t-4 border-orange-500 bg-orange-100">
@@ -143,31 +144,36 @@
           >
             Step 2 - Type of Bike
           </legend>
-          <label for="">Type</label>
-          <select name="" id="">
-            <option value="">Hybrid</option>
-            <option value="">MTB</option>
-            <option value="">Gravel</option>
-            <option value="">Road bike</option>
-            <option value="">Child bike</option>
-            <option value="">eBike</option>
-            <option value="">Ridgeback Velocity Tandem</option>
-            <option value="">Viking Tandem Hybrid</option>
-            <option value="">Trike</option>
-          </select>
-          <label for="">Size</label>
-          <select name="" id="">
-            <option value="">xs</option>
-            <option value="">sm</option>
-            <option value="">m</option>
-            <option value="">l</option>
-            <option value="">xl</option>
-          </select>
-          <label for="">Gender</label>
-          <select name="" id="">
-            <option value="">M</option>
-            <option value="">F</option>
-          </select>
+          <div id="type-of-bike">
+            <div class="person">
+              <p>Person 1</p>
+              <label for="bike-type-pers${i + 1}">Type</label>
+              <select name="bike-type-pers${i + 1}" id="bike-type-pers${i + 1}" class="bike-type">
+                <option value="hybrid">Hybrid</option>
+                <option value="mtb" ${disabled}>MTB</option>
+                <option value="gravel" ${disabled}>Gravel</option>
+                <option value="road-bike">Road bike</option>
+                <option value="child-bike">Child bike</option>
+                <option value="ebike">eBike</option>
+                <option value="velocity-tandem">Ridgeback Velocity Tandem</option>
+                <option value="tandem-hybrid">Viking Tandem Hybrid</option>
+                <option value="trike">Trike</option>
+              </select>
+              <label for="bike-size-pers${i + 1}">Size</label>
+              <select name="bike-size-pers${i + 1}" id="bike-size-pers${i + 1}">
+                <option value="xs">xs</option>
+                <option value="sm">sm</option>
+                <option value="m">m</option>
+                <option value="l">l</option>
+                <option value="xl">xl</option>
+              </select>
+              <label for="gender-pers${i + 1}">Gender</label>
+              <select name="gender-pers${i + 1}" id="gender-pers${i + 1}">
+                <option value="m">M</option>
+                <option value="f">F</option>
+              </select>
+            </div>
+          </div>
         </fieldset>
         <fieldset class="mb-8 p-4 border-t-4 border-orange-500 bg-orange-100">
           <legend
@@ -175,41 +181,60 @@
           >
             Step 3 - Extra
           </legend>
-          <label for="">Tag-a-long </label>
-          <select name="" id="">
-            <option value="">1</option>
-            <option value="">2</option>
-            <option value="">3</option>
-            <option value="">4</option>
-          </select>
-          <label for="">Weehoo Single </label>
-          <select name="" id="">
-            <option value="">1</option>
-            <option value="">2</option>
-            <option value="">3</option>
-            <option value="">4</option>
-          </select>
-          <label for="">Weehoo Double </label>
-          <select name="" id="">
-            <option value="">1</option>
-            <option value="">2</option>
-            <option value="">3</option>
-            <option value="">4</option>
-          </select>
-          <label for="">Child Trailer </label>
-          <select name="" id="">
-            <option value="">1</option>
-            <option value="">2</option>
-            <option value="">3</option>
-            <option value="">4</option>
-          </select>
-          <label for="">Child Seat </label>
-          <select name="" id="">
-            <option value="">1</option>
-            <option value="">2</option>
-            <option value="">3</option>
-            <option value="">4</option>
-          </select>
+          <div class="flex justify-between py-1">
+            <label class="font-display text-xl" for="tag-a-long">Tag-a-long </label>
+            <select
+              name="tag-a-long"
+              id="tag-a-long"
+              class="extra border-2 border-orange-700 rounded-full py-2 px-4"
+            >
+              <option value="0" selected disabled hidden>0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+          </div>
+          <div class="flex justify-between py-1">
+            <label class="font-display text-xl" for="weehoo-single">Weehoo Single </label>
+            <select name="weehoo-single" id="weehoo-single" class="extra">
+              <option value="0" selected disabled hidden>0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+          </div>
+          <div>
+            <label for="weehoo-double">Weehoo Double </label>
+            <select name="weehoo-double" id="weehoo-double" class="extra">
+              <option value="0" selected disabled hidden>0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+          </div>
+          <div>
+            <label for="child-trailer">Child Trailer </label>
+            <select name="child-trailer" id="child-trailer" class="extra">
+              <option value="0" selected disabled hidden>0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+          </div>
+          <div>
+            <label for="child-seat">Child Seat </label>
+            <select name="child-seat" id="child-seat" class="extra">
+              <option value="0" selected disabled hidden>0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+          </div>
         </fieldset>
         <fieldset class="mb-8 p-4 border-t-4 border-orange-500 bg-orange-100">
           <legend
@@ -260,6 +285,7 @@
           >
             Step 5 - Payment Details
           </legend>
+          <p>Total:</p>
           <div class="w-full flex flex-col">
             <label for="card-number" class="font-sans font-bold text-brown-800">Card number</label>
             <input
@@ -367,6 +393,7 @@
       <p class="text-center text-sm text-white">Copyright &copy; 2023, All Rights Reserved</p>
     </footer>
     <script src="index.js"></script>
+    <script src="booking.js" type="module"></script>
     <script src="calendar.js"></script>
   </body>
 </html>

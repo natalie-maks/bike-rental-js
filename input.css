@@ -157,3 +157,11 @@ nav ul.open {
 .days li:not(.active):hover::before {
   @apply bg-yellow-50;
 }
+
+.select-open {
+  display: block;
+}
+
+.selected {
+  @apply bg-orange-300;
+}
