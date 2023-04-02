@@ -44,7 +44,7 @@
       </ul>
     </nav>
     <main>
-      <div class="bg-orange-100 h-72 flex items-center justify-center pt-14">
+      <div class="bg-orange-100 h-72 flex items-center justify-center pt-14 page-header">
         <h1
           class="text-violet-900 bg-orange-700 block w-fit pt-4 pb-3 px-8 sm:px-12 rotate-[-4deg] font-bold text-5xl font-display"
         >
@@ -57,7 +57,7 @@
         from your own location. We've also included our exact GPS coordinates, if you just want to
         pop us into your SatNav!
       </p>
-      <div class="px-4">
+      <div class="px-4 map">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d71585.38295352984!2d-4.307468199489067!3d50.9977443113705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x486c146ad74edac7%3A0xb5ef901c8b991d6b!2sPeppercombe%20Beach!5e0!3m2!1sen!2suk!4v1679436913775!5m2!1sen!2suk"
           width="600"
@@ -69,15 +69,15 @@
           title="Map"
           class="h-72 mx-auto w-full md:w-2/3 rounded-md md:rounded-2xl"
         ></iframe>
-      </div>
 
-      <p class="text-center text-lg lg:w-2/3 mx-auto mt-12 font-display px-4 md:px-12">
-        GPS: LAT 50.9885 / 50°59'18"N | LON -4.3194 / 4°19'9"W
-      </p>
+        <p class="text-center text-lg lg:w-2/3 mx-auto mt-12 font-display px-4 md:px-12">
+          GPS: LAT 50.9885 / 50°59'18"N | LON -4.3194 / 4°19'9"W
+        </p>
+      </div>
 
       <section class="my-40 px-4 md:px-12" id="contact">
         <h2
-          class="block w-fit mx-auto mb-20 pt-4 pb-3 px-8 lg:px-12 rotate-[5deg] origin-bottom-left text-3xl text-center font-display text-violet-900 bg-orange-700"
+          class="block w-fit mx-auto mb-20 pt-4 pb-3 px-8 lg:px-12 rotate-[5deg] text-3xl text-center font-display text-violet-900 bg-orange-700"
         >
           Contact us
         </h2>
@@ -265,5 +265,98 @@
     </footer>
     <script src="index.js"></script>
     <script src="message.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+    <script>
+      let pageTl = gsap.timeline({ delay: 0.5 });
+
+      pageTl
+        .fromTo(
+          ".page-header",
+          { clipPath: "polygon(0 0, 0 100%, 0 100%, 0 0)", opacity: 0 },
+          { clipPath: "polygon(100% 0, 100% 100%, 0 100%, 0 0)", opacity: 1, duration: 1.5 }
+        )
+        .fromTo("nav", { y: -100, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7 }, "-=0.5")
+        .fromTo("h1", { scale: 1.1, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.3 })
+        .fromTo("main > p", { y: -70, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7 });
+
+      function createGsapScrollTriger(element) {
+        gsap.fromTo(
+          element,
+          { y: -20, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            scrollTrigger: {
+              trigger: element,
+              start: "center 70%",
+            },
+          }
+        );
+      }
+
+      createGsapScrollTriger(".map");
+      createGsapScrollTriger("section > p");
+      createGsapScrollTriger("section > div");
+      createGsapScrollTriger("section form");
+
+      gsap.fromTo(
+        "h2",
+        { scale: 1.1, opacity: 0 },
+        {
+          scale: 1,
+          opacity: 1,
+          duration: 0.3,
+          scrollTrigger: {
+            trigger: "h2",
+            start: "center 70%",
+          },
+        }
+      );
+
+      let footerTl = gsap.timeline({
+        scrollTrigger: {
+          trigger: "footer",
+          start: "top 80%",
+        },
+      });
+
+      footerTl
+        .fromTo(
+          "footer",
+          { clipPath: "polygon(0 0, 0 100%, 0 100%, 0 0)", opacity: 0 },
+          {
+            clipPath: "polygon(100% 0, 100% 100%, 0 100%, 0 0)",
+            opacity: 1,
+            duration: 1.5,
+          }
+        )
+        .fromTo(
+          "footer > div",
+          { y: -40, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.8 },
+          "-=0.7"
+        )
+        .fromTo("footer > div p", { x: -10, opacity: 0 }, { x: 0, opacity: 1 })
+        .fromTo(
+          "footer > div ul li",
+          { x: -10, opacity: 0 },
+          { x: 0, opacity: 1, stagger: 0.2 },
+          "<"
+        )
+        .fromTo(
+          "footer > div form > *",
+          { x: -10, opacity: 0 },
+          { x: 0, opacity: 1, stagger: 0.2 },
+          "<"
+        )
+        .fromTo(
+          "footer > ul li",
+          { y: -10, opacity: 0 },
+          { y: 0, opacity: 1, stagger: 0.2 },
+          "+=0.1"
+        )
+        .fromTo("footer > p", { opacity: 0 }, { opacity: 1 });
+    </script>
   </body>
 </html>
