@@ -18,7 +18,7 @@
     <script src="https://unpkg.com/imask"></script>
     <title>Let's Ride Bicycle Club - Booking</title>
   </head>
-  <body>
+  <body class="opacity-0">
     <nav
       class="fixed z-10 w-full min-h-[60px] bg-white py-4 rounded-b-2xl shadow-sm font-bold font-display"
     >
@@ -433,6 +433,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
     <script>
+      gsap.to("body", { opacity: 100 });
+
       let pageTl = gsap.timeline({ delay: 0.5 });
 
       pageTl
