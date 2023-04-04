@@ -813,6 +813,10 @@ body {
   min-width: 48px;
 }
 
+.min-w-\[125px\] {
+  min-width: 125px;
+}
+
 .max-w-\[350px\] {
   max-width: 350px;
 }
@@ -1290,16 +1294,12 @@ body {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.opacity-80 {
-  opacity: 0.8;
-}
-
 .opacity-0 {
   opacity: 0;
 }
 
-.opacity-10 {
-  opacity: 0.1;
+.opacity-80 {
+  opacity: 0.8;
 }
 
 .shadow-md {

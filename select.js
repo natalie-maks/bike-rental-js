@@ -53,7 +53,8 @@ function setupCustomElement(select) {
     "outline-none",
     "group",
     "focus:z-[1]",
-    "h-[46px]"
+    "h-[46px]",
+    "min-w-[125px]"
   );
   select.element.classList.forEach((i) => {
     select.customElement.classList.add(i);

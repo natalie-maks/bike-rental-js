@@ -459,6 +459,9 @@
               trigger: field,
               start: "center 60%",
             },
+            onComplete: function () {
+              field.removeAttribute("style");
+            },
           }
         );
       });
