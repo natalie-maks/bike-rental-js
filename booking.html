@@ -43,7 +43,20 @@
         <li class="hover:text-violet-900">
           <a href="/find-us.html">Find Us</a>
         </li>
+        <li class="sm:hidden">
+          <a href="/booking.html">Book</a>
+        </li>
       </ul>
+      <a
+        class="hidden sm:block lg:hidden absolute top-2 right-4 bg-violet-700 rounded-full mx-auto w-full sm:w-fit py-4 sm:py-2 px-8 text-xl font-display text-white shadow-md hover:bg-violet-900 cursor-pointer"
+        href="/booking.html"
+        >Book</a
+      >
+      <a
+        class="hidden lg:block absolute top-2 right-10 bg-violet-700 rounded-full mx-auto w-full sm:w-fit py-4 sm:py-2 px-8 text-xl font-display text-white shadow-md hover:bg-violet-900 cursor-pointer"
+        href="/booking.html"
+        >Book a bike</a
+      >
     </nav>
     <main>
       <div class="bg-orange-100 h-72 flex items-center justify-center pt-14 page-header">
@@ -136,12 +149,12 @@
             <div class="md:w-1/2 flex justify-between items-center mb-4">
               <label for="time" class="font-display text-xl">Pickup Time</label>
               <select data-id="time">
-                <option value="">9AM</option>
-                <option value="">9:30AM</option>
-                <option value="">10AM</option>
-                <option value="">10:30AM</option>
-                <option value="">11AM</option>
-                <option value="">11:30AM</option>
+                <option value="9AM">9AM</option>
+                <option value="9:30AM">9:30AM</option>
+                <option value="10AM">10AM</option>
+                <option value="10:30AM">10:30AM</option>
+                <option value="11AM">11AM</option>
+                <option value="11:30AM">11:30AM</option>
               </select>
             </div>
           </div>
